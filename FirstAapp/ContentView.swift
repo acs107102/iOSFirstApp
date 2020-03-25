@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
        ZStack {
-         Image("photo3")
+        Image("photo3")
                 .resizable()
         Text("dodoro")
             .foregroundColor(Color(hue: 0.407, saturation: 0.991, brightness: 0.011)).font(.custom("Chalkduster",size: 65))
@@ -19,6 +19,7 @@ struct ContentView: View {
         
           
         Group {
+            //灰色主體
             Path{(path) in
                     path.move(to:CGPoint(x:122, y:442));
                     path.addQuadCurve(to: CGPoint(x:167, y:580), control:CGPoint(x:115, y:485))
@@ -38,19 +39,28 @@ struct ContentView: View {
                     path.closeSubpath()
                 }
             .fill(Color(red:203/255, green:203/255, blue:203/255))
+            
+            // 肚子白色部分
             Path(ellipseIn: CGRect(x:133,y:608,width:140,height:150))
                 .fill(Color.white)
+            
+            // 眼白
             Path(ellipseIn: CGRect(x:147,y:538,width:30,height:30))
             .fill(Color.white)
             Path(ellipseIn: CGRect(x:227,y:538,width:30,height:30))
             .fill(Color.white)
+            
+            // 瞳孔
             Path(ellipseIn: CGRect(x:157,y:548,width:10,height:10))
             .fill(Color.black)
             Path(ellipseIn: CGRect(x:237,y:548,width:10,height:10))
             .fill(Color.black)
+            
+            // 鼻子
             Path(ellipseIn: CGRect(x:190,y:558,width:20,height:10))
             .fill(Color.black)
             
+            // 嘴巴
             Path{(path) in
               path.move(to:CGPoint(x:137, y:585));
               path.addQuadCurve(to: CGPoint(x:265, y:585), control:CGPoint(x:205, y:555))
@@ -59,6 +69,7 @@ struct ContentView: View {
               .fill(Color.white)
         }
         
+        // 肚子花紋
         Group {
             a()
                 .fill(Color.gray)
@@ -69,6 +80,21 @@ struct ContentView: View {
                 .fill(Color.gray)
                 .position(x:175, y:425)
             }
+        
+        // 煤炭
+        Group {
+            Path(ellipseIn: CGRect(x:320,y:713,width:50,height:40))
+                .fill(Color.black)
+            Path(ellipseIn: CGRect(x:330,y:728,width:10,height:10))
+            .fill(Color.white)
+            Path(ellipseIn: CGRect(x:350,y:728,width:10,height:10))
+            .fill(Color.white)
+            Path(ellipseIn: CGRect(x:333,y:730,width:5,height:5))
+            .fill(Color.black)
+            Path(ellipseIn: CGRect(x:353,y:730,width:5,height:5))
+            .fill(Color.black)
+          }
+        
         }
     }
 }
