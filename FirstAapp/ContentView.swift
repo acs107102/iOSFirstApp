@@ -21,16 +21,19 @@ struct ContentView: View {
         Group {
             //灰色主體
             Path{(path) in
+                    // 左耳
                     path.move(to:CGPoint(x:122, y:442));
                     path.addQuadCurve(to: CGPoint(x:167, y:580), control:CGPoint(x:115, y:485))
                     path.addQuadCurve(to: CGPoint(x:122,y:442), control:CGPoint(x:155, y:455))
                     path.closeSubpath()
                     
+                    // 右耳
                     path.move(to:CGPoint(x:290, y:442));
                     path.addQuadCurve(to: CGPoint(x:240, y:580), control:CGPoint(x:258, y:456))
                     path.addQuadCurve(to: CGPoint(x:290,y:442), control:CGPoint(x:296, y:483))
                     path.closeSubpath()
-                    
+                
+                    // 身體
                     path.move(to:CGPoint(x:271, y:557));
                     path.addQuadCurve(to: CGPoint(x:128, y:557), control:CGPoint(x:203, y:460))
                     path.addQuadCurve(to: CGPoint(x:130,y:717), control:CGPoint(x:75, y:648))
@@ -69,17 +72,17 @@ struct ContentView: View {
               .fill(Color.white)
         }
         
-        // 肚子花紋
-        Group {
-            a()
-                .fill(Color.gray)
-            a()
-                .fill(Color.gray)
-                .position(x:245, y:425)
-            a()
-                .fill(Color.gray)
-                .position(x:175, y:425)
-            }
+//        // 肚子花紋
+//        Group {
+//            a()
+//                .fill(Color.gray)
+//            a()
+//                .fill(Color.gray)
+//                .position(x:245, y:425)
+//            a()
+//                .fill(Color.gray)
+//                .position(x:175, y:425)
+//            }
         
         // 煤炭
         Group {
@@ -94,7 +97,7 @@ struct ContentView: View {
             Path(ellipseIn: CGRect(x:353,y:730,width:5,height:5))
             .fill(Color.black)
           }
-        
+
         }
     }
 }
